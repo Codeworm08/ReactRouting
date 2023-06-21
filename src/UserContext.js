@@ -8,12 +8,14 @@ export const UserProvider = ({children}) => {
         if(users[username])
         {
             alert("Username already exists!.");
+            console.log(users);
             return;
         }
         setUsers((prevUsers)=>({
             ...prevUsers,
-            [username]: {password}
+            [username]: {password},
         }));
+        console.log(users);
         alert("Registration Successful!");
     };
     const loginUser = (username, password) => {
@@ -26,10 +28,16 @@ export const UserProvider = ({children}) => {
         {
             setIsLoggedIn(false);
             setUser(null);
+            console.log(users);
             alert('Invalid Username or password');
         }
     };
-    const value={users,isLoggedIn,loggedUser,registerUser,loginUser};
+    const logoutUser = ()=> {
+        setIsLoggedIn(false);
+        setUser(null);
+        alert('Signed Out');
+    }
+    const value={users,isLoggedIn,loggedUser,registerUser,loginUser,logoutUser};
     return (
         <UserContext.Provider value={value}>
             {children}
