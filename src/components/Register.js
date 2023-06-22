@@ -1,5 +1,6 @@
 import '../App.css';
 import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../UserContext';
 function Register()
 {
@@ -30,6 +31,7 @@ function Register()
     }
     return (
         <div>
+            
             <form className="Form" onSubmit={(e)=>{handleSubmit(e)}}>
                 <label>Username:</label><br/>
                 <input type="text" value={name} required onChange={(e)=>{handleName(e)}}/><br/>
