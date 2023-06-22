@@ -1,11 +1,13 @@
 import '../App.css';
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserContext from '../UserContext';
 function SignIn()
 {
     const {loginUser}=useContext(UserContext);
     const [name,setName]=useState('');
     const [password,setPassword]=useState('');
+    const navigate=useNavigate();
     const handleName = (e) => {
         setName(e.target.value);
     }
@@ -15,6 +17,9 @@ function SignIn()
     const handleSubmit = (e)=>{
         e.preventDefault();
         loginUser(name,password);
+        if(name!==''){
+            navigate("/");
+        }
     }
     return (
         <div >
