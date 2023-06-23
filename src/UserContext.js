@@ -1,17 +1,18 @@
 import React, { createContext, useState, useEffect } from 'react';
 const UserContext = createContext();
 export const UserProvider = ({children}) => {
-    const [users,setUsers] = useState({});
+    const [users,setUsers] = useState(()=> {
+        try {
+            const storedUsers = localStorage.getItem('users');
+            return storedUsers ? JSON.parse(storedUsers) : [];
+          } catch (error) {
+            console.error('Error parsing users data from local storage:', error);
+            return [];
+          }
+    });
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loggedUser,setUser] = useState(null);
-    useEffect(()=>{
-        const storedUsers=localStorage.getItem('users');
-        if(storedUsers)
-        {
-            setUsers(JSON.parse(storedUsers));
-        }
-    },[]);
-
+    
     useEffect(() => {
         localStorage.setItem('users', JSON.stringify(users));
       }, [users]);

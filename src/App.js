@@ -5,8 +5,10 @@ import Landing from './components/Landing';
 import SignIn from './components/SignIn';
 import Register from './components/Register';
 import Catalog from './components/Catalog';
+import Course from './components/Course';
 import { useContext } from 'react';
 import SignOut from './components/SignOut';
+import Dashboard from './components/Dashboard';
 function App() {
   const {isLoggedIn,loggedUser}=useContext(UserContext);
   return (
@@ -34,6 +36,8 @@ function App() {
         <Route path="/signout" element={<SignOut />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/courses" element={<Catalog />}/>
+        <Route path="/course/:courseName" element={<Course />}/>
+        <Route path="/dash" element={<Dashboard />}/>
       </Routes>
     </>
   );
