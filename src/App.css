@@ -55,3 +55,38 @@
 .active {
   background-color: #04AA6D;
 }
+.catalog {
+  margin-top:20px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 20px;
+}
+
+.course-card {
+  width:50vW;
+  
+  margin:8px;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.course-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.course-card h3 {
+  margin-bottom: 10px;
+}
+
+.course-card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
