@@ -22,10 +22,22 @@ export const SubscribedProvider = ({ children }) => {
   }, [subscribedUsers]);
 
   const subscribeUser = (username, courses) => {
-    setSubscribedUsers((prevUsers) => ({
-      ...prevUsers,
-      [username]: courses,
-    }));
+    setSubscribedUsers((prevUsers) => {
+        const userSubscriptions = prevUsers[username] || [];
+
+        // Check if the user is already subscribed to the course
+        if (userSubscriptions.includes(courses)) {
+          // User is already subscribed, handle accordingly (e.g., show a message)
+          return prevUsers;
+        }
+    
+        const updatedSubscriptions = {
+          ...prevUsers,
+          [username]: [...userSubscriptions, courses],
+        };
+    
+        return updatedSubscriptions;
+      });
   };
 
   const value = {

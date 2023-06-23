@@ -10,7 +10,7 @@ import { useContext } from 'react';
 import SignOut from './components/SignOut';
 import Dashboard from './components/Dashboard';
 function App() {
-  const {isLoggedIn,loggedUser}=useContext(UserContext);
+  const {isLoggedIn}=useContext(UserContext);
   return (
     <>
     <div class="Nav">
@@ -31,7 +31,7 @@ function App() {
     </div>
     
       <Routes>
-        <Route path="/" element={<Landing />}/>
+        <Route path="/" element={<Catalog/>}/>
         <Route path="/signin" element={<SignIn />}/>
         <Route path="/signout" element={<SignOut />}/>
         <Route path="/register" element={<Register />}/>

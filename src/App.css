@@ -2,39 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-image: linear-gradient(to right, #f1eee9, #f6eaf6);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Head{
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 2.5em;
 }
 .Nav{
   display: flex;
@@ -62,9 +36,12 @@
   align-items:center;
   gap: 20px;
 }
+.sub{
 
+}
 .course-card {
   width:50vW;
+  background-color: rgb(255, 255, 255);
   
   margin:8px;
   align-items: center;
@@ -82,11 +59,94 @@
 .course-card h3 {
   margin-bottom: 10px;
 }
+.Form{
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #282c34;
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+}
+.boxGlow{
+  display: block;
+  border: 2px solid rgb(39, 37, 37);
+  min-width: 20vW;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(1, 27, 29, 0.5);
+}
+input[type="submit"]{
+  color:white;
+  cursor: pointer;
+  background-color: #282c34;
+  border: 2px solid white;
+  padding: 8px;
+  margin:6%;
+  font-size: calc(4px + 2vmin)
+}
 
+input[type="text"],input[type="tel"],input[type="password"],input[type="email"]{
+  border-radius: 10px;
+  margin:10px;
+  min-width: 70%;
+}
 .course-card img {
   width: 100%;
   max-width: 300px;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
+}
+.courseHead{
+  text-align: center;
+  font-size: 2.5em;
+  color: #4CAF50;
+}
+.videos {
+  /* Your existing styles for the videos container */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.video-card {
+  width: 250px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  align-items:center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.video-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.video-card a {
+  text-decoration: none;
+}
+.lecture-thumbnail {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lecture-thumbnail img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+.lecture-text {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #4CAF50;
 }

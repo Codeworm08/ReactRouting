@@ -10,20 +10,19 @@ function Course()
     console.log(params);
     return (
         <div className='course'>
-            <h2>{params.courseName}</h2>
+            <h2 className='courseHead'>{params.courseName}</h2>
             <div className='videos'>
-                {videos.map((video,index) =>(
-                    <div key={index} className='video'>
-                    <iframe
-                    width="560"
-                    height="315"
-                    src={video}
-                    title={`Video ${index + 1}`}
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    ></iframe>
-                    </div>
-                ))}
+            {videos.map((video, index) => (
+                <div key={index} className='video-card'>
+                    <a href={video}>
+                    <div className='lecture-text'>Lecture: {index + 1}</div>
+                
+                <div className='lecture-thumbnail'>
+                    <img src={`../${params.courseName}-thumbnail.png`} alt='Course Thumbnail' />
+                </div>
+                </a>
+                </div>
+            ))}
             </div>
         </div>
     );

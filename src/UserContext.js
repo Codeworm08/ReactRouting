@@ -35,6 +35,7 @@ export const UserProvider = ({children}) => {
             setIsLoggedIn(true);
             setUser(username);
             alert('Login successful');
+            return true;
         }
         else
         {
@@ -42,6 +43,7 @@ export const UserProvider = ({children}) => {
             setUser(null);
             console.log(users);
             alert('Invalid Username or password');
+            return false;
         }
     };
     const logoutUser = ()=> {
