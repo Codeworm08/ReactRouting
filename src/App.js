@@ -1,7 +1,6 @@
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import UserContext from './UserContext';
-import Landing from './components/Landing';
 import SignIn from './components/SignIn';
 import Register from './components/Register';
 import Catalog from './components/Catalog';
