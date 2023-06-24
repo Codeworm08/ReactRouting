@@ -14,7 +14,7 @@ function Course()
             <div className='videos'>
             {videos.map((video, index) => (
                 <div key={index} className='video-card'>
-                    <a href={video}>
+                    <a href={video} target="_blank" rel="noreferrer">
                     <div className='lecture-text'>Lecture: {index + 1}</div>
                 
                 <div className='lecture-thumbnail'>
