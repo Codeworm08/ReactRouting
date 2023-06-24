@@ -22,6 +22,9 @@ body{
   padding: 8px;
   color: #dddddd;
 }
+.WelcomeNav{
+  float:right;
+}
 .Nav a:hover{
   cursor:pointer;
   background-color:#1b63f3
@@ -36,8 +39,10 @@ body{
   align-items:center;
   gap: 20px;
 }
-.sub{
-
+.Nav span{
+  color: #dddddd;
+  margin: 0 8px 0 8px;
+  padding: 8px;
 }
 .course-card {
   width:50vW;

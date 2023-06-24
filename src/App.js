@@ -9,7 +9,7 @@ import { useContext } from 'react';
 import SignOut from './components/SignOut';
 import Dashboard from './components/Dashboard';
 function App() {
-  const {isLoggedIn}=useContext(UserContext);
+  const {isLoggedIn,loggedUser}=useContext(UserContext);
   return (
     <>
     <div class="Nav">
@@ -17,6 +17,7 @@ function App() {
         <>
         <Link to="/signout">Log Out</Link>)
         <Link to="/dash">Dashboard</Link>)
+        
         </>
       )
         :
@@ -27,6 +28,7 @@ function App() {
         </>
       )}
       <Link to="/courses">Courses</Link>
+      {isLoggedIn && <span className="WelcomeNav">Welcome {loggedUser}</span>}
     </div>
     
       <Routes>
